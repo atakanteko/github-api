@@ -26,7 +26,7 @@ module.exports = {
     ],
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off',
-
+    'import/prefer-default-export': 'off',
     'import/order': [
       'error',
       {

@@ -1,5 +1,11 @@
+import { Button } from 'antd';
+
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <Button>Atakan</Button>
+    </div>
+  );
 }
 
 export default HomePage;
