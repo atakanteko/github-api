@@ -26,5 +26,36 @@ module.exports = {
     ],
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off',
+
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['sibling', 'parent'],
+          'index',
+          'unknown',
+        ],
+        'newlines-between': 'always',
+        pathGroups: [
+          {
+            pattern: 'react*',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
 };

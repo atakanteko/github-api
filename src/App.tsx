@@ -1,14 +1,27 @@
-import { useState } from 'react';
-import { Button } from 'antd';
+import { BrowserRouter } from 'react-router-dom';
+
+import { ConfigProvider, theme } from 'antd';
+
+import Router from './routes/routes';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <main>
-      <Button type="primary">Button</Button>
-    </main>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
+      }}
+    >
+      <Router />
+    </ConfigProvider>
   );
 }
 
-export default App;
+function WrappedApp() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
+
+export default WrappedApp;
