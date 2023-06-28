@@ -22,6 +22,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-named-as-default': 0,
     'no-param-reassign': [2, { props: false }],
+    '@typescript-eslint/no-var-requires': 0,
     'import/order': [
       'error',
       {

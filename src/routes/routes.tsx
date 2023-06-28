@@ -1,17 +1,19 @@
+import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
 import { IRoute } from './config/route-config';
-import HomePage from '../pages/home/home-page';
-import NotFound from '../pages/not-found/not-found';
+import LazyLoader from '../components/ui/loaders/loader-lazy';
 
 const routeTree: IRoute[] = [
   {
     path: '/',
-    element: <HomePage />,
+    element: LazyLoader(React.lazy(() => import('../pages/home/home-page'))),
   },
   {
     path: '*',
-    element: <NotFound />,
+    element: LazyLoader(
+      React.lazy(() => import('../pages/not-found/not-found'))
+    ),
   },
 ];
 
