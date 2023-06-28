@@ -1,16 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { ConfigProvider, theme } from 'antd';
+import { ConfigProvider } from 'antd';
 
 import Router from './routes/routes';
+import { customToken } from './theme/config';
 
 function App() {
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: theme.darkAlgorithm,
-      }}
-    >
+    <ConfigProvider theme={customToken}>
       <Router />
     </ConfigProvider>
   );
