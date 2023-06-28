@@ -16,17 +16,12 @@ module.exports = {
   },
   plugins: ['react-refresh', 'prettier'],
   rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: false,
-        optionalDependencies: false,
-        peerDependencies: false,
-      },
-    ],
+    'import/no-extraneous-dependencies': 'off',
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-named-as-default': 0,
+    'no-param-reassign': [2, { props: false }],
     'import/order': [
       'error',
       {
