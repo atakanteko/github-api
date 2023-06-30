@@ -10,7 +10,7 @@ function Login() {
       <div className="login-image">
         <img src={LoginImage} alt="login img" />
       </div>
-      <Title level={2}>Github User</Title>
+      <Title level={1}>Github User</Title>
       <Button type="primary" className="login-button">
         Login
       </Button>

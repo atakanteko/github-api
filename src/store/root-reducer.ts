@@ -2,9 +2,11 @@ import { AnyAction, CombinedState, Reducer, combineReducers } from 'redux';
 
 import { IStore } from './IStore';
 import counterSlice from '../features/counter/counterSlice';
+import { appService } from '../services/api';
 
 const appReducer: Reducer<CombinedState<IStore>> = combineReducers({
   counter: counterSlice,
+  [appService.reducerPath]: appService.reducer,
 });
 
 const rootReducer = (
