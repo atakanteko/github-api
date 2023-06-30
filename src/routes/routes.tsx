@@ -1,15 +1,14 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
-import { IRoute, authRoutes } from './config';
+import { appRoutes } from './config/application-config';
+import { authRoutes } from './config/authentication-config';
+import { IRoute } from './config/route-config';
 import LazyLoader from '../components/ui/loaders/loader-lazy';
 
 const routeTree: IRoute[] = [
-  {
-    path: '/',
-    element: LazyLoader(React.lazy(() => import('../pages/home/home-page'))),
-  },
   ...authRoutes,
+  ...appRoutes,
   {
     path: '*',
     element: LazyLoader(
