@@ -1,0 +1,36 @@
+.ant-layout {
+    &.auth-layout {
+        
+        background-color: #ffffff;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ant-layout-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .login-screen-wrapper {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                flex-direction: column;
+                .login-image {
+                    min-width: 300px;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                .login-button {
+                    min-width: 120px;
+                    @media @xxs {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

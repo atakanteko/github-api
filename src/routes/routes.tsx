@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
-import { IRoute } from './config/route-config';
+import { IRoute, authRoutes } from './config';
 import LazyLoader from '../components/ui/loaders/loader-lazy';
 
 const routeTree: IRoute[] = [
@@ -9,6 +9,7 @@ const routeTree: IRoute[] = [
     path: '/',
     element: LazyLoader(React.lazy(() => import('../pages/home/home-page'))),
   },
+  ...authRoutes,
   {
     path: '*',
     element: LazyLoader(
