@@ -7,7 +7,7 @@ section.home-frame {
         }
     }
     .home-user-section {
-        flex: 2;
+        flex: 2.1;
         height: max-content;
         h1,h2,h3,h4 {
             margin-bottom: 0;
@@ -48,19 +48,54 @@ section.home-frame {
     }
     .home-content-section {
         height: max-content;
-
         flex: 6;
         margin-left: 10px;
         margin-right: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 10px;
     }
     .home-follower-section {
         height: max-content;
+        flex: 3.3;
+        .ant-card {
+            // background-color: red;
+        }
+        .follower-card {
+            overflow: scroll;
+            max-height: 460px;
+            .followers {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                gap: 6px;
+                .follower {
+                    border-radius: 10px;
+                    overflow: hidden;
 
-        background-color: pink;
-        flex: 4;
+                    .img-container {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        width: 90px;
+                        // height: 120px;
+                        img {
+                            scale: 1.2;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        span {
+                            color: #fff;
+                            left: 5px;
+                            bottom: 10px;
+                            position: absolute !important;
+                        }
+                    }
+                }
+            }
+        }
     }
     // @media @xxs {
     //     flex-direction: column;
