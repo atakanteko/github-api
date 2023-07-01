@@ -3,16 +3,52 @@ section.home-frame {
     &.vertical {
         flex-direction: column;
         .home-content-section {
-            margin-left: 0px;
-            margin-right: 0px;
+            margin: 20px 0 20px 0;
         }
     }
     .home-user-section {
-        background-color: blue;
         flex: 2;
-       
+        height: max-content;
+        h1,h2,h3,h4 {
+            margin-bottom: 0;
+        }
+        .ant-divider {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .ant-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .ant-card-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .user-img-container {
+            border-radius: 50%;
+            overflow: hidden;
+            max-width: 150px;
+            min-height: 150px;
+            img {
+                object-fit:cover;
+                width: 100%;
+            }
+           
+        }
+        .user-social {
+            display: flex;
+            flex: 10px;
+            align-self: flex-start;
+            img {
+                margin-right: 5px;
+            }
+        }
     }
     .home-content-section {
+        height: max-content;
+
         flex: 6;
         margin-left: 10px;
         margin-right: 10px;
@@ -21,6 +57,8 @@ section.home-frame {
         justify-content: space-between;
     }
     .home-follower-section {
+        height: max-content;
+
         background-color: pink;
         flex: 4;
     }

@@ -23,8 +23,8 @@ function ContentSection() {
       />
       <AntCard
         avatar={starImg}
-        title="Stars"
-        description={10}
+        title="Gists"
+        description={user.public_gists}
         loading={false}
       />
       <AntCard
