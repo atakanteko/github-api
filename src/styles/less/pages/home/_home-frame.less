@@ -1,0 +1,41 @@
+section.home-frame {
+    display: flex;
+    &.vertical {
+        flex-direction: column;
+        .home-content-section {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+    .home-user-section {
+        background-color: blue;
+        flex: 2;
+       
+    }
+    .home-content-section {
+        flex: 6;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .home-follower-section {
+        background-color: pink;
+        flex: 4;
+    }
+    // @media @xxs {
+    //     flex-direction: column;
+    //     .home-content-section {
+    //         margin-left: 0px;
+    //         margin-right: 0px;
+    //     }
+    // }
+    // @media @xs {
+    //     flex-direction: column;
+    //     .home-content-section {
+    //         margin-left: 0px;
+    //         margin-right: 0px;
+    //     }
+    // }
+}
