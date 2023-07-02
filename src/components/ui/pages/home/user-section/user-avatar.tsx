@@ -1,7 +1,7 @@
 import React from 'react';
 
 type UserAvatarType = {
-  userAvatarAddress: string;
+  userAvatarAddress: string | undefined;
 };
 function UserAvatar({ userAvatarAddress }: UserAvatarType) {
   return (

@@ -1,13 +1,18 @@
 import { appService } from './api';
-import { IGitHubUser } from '../types/services/IUser';
+import { IGitHubUser, IGitHubUserFollowers } from '../types/services/IUser';
 
 export const githubUserInformation = appService.injectEndpoints({
-  endpoints: (build) => ({
-    getGithubUserInfo: build.query<IGitHubUser, void>({
+  endpoints: (builder) => ({
+    getGithubUserInfo: builder.query<IGitHubUser, void>({
       query: () => '/users/john-smilga',
       providesTags: ['Users'],
+    }),
+    getGithubUserFollowers: builder.query<IGitHubUserFollowers[], void>({
+      query: () => '/users/john-smilga/followers',
+      providesTags: ['UserFollowers'],
     }),
   }),
 });
 
-export const { useGetGithubUserInfoQuery } = githubUserInformation;
+export const { useGetGithubUserInfoQuery, useGetGithubUserFollowersQuery } =
+  githubUserInformation;

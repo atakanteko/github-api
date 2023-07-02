@@ -8,5 +8,5 @@ export const appService = createApi({
   reducerPath: 'api',
   baseQuery,
   endpoints: () => ({}),
-  tagTypes: ['Users'],
+  tagTypes: ['Users', 'UserFollowers'],
 });

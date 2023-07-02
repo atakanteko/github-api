@@ -8,28 +8,37 @@ import UserSocial from './user-section/user-social';
 import UserLocationImg from '../../../../assets/images/user-social-location.svg';
 import UserOrganizationImg from '../../../../assets/images/user-social-organization.svg';
 import UserTwitterImg from '../../../../assets/images/user-social-twitter.svg';
-import userModel from '../../../../model/user-model.json';
 
-function UserSection() {
-  const [user, setUser] = useState(userModel);
+type UserSectionType = {
+  avatarURL: string;
+  userName: string;
+  company: string;
+  location: string;
+  twitterAddress: string;
+};
+
+function UserSection({
+  avatarURL,
+  userName,
+  company,
+  location,
+  twitterAddress,
+}: UserSectionType) {
   return (
     <section className="home-user-section">
       <Card>
-        <UserAvatar userAvatarAddress={user.avatar_url} />
+        <UserAvatar userAvatarAddress={avatarURL} />
         <Divider />
-        <UserInfo userName={user.login} />
+        <UserInfo userName={userName} />
         <Divider />
         <UserSocial
           socialImgAddress={UserOrganizationImg}
-          socialInfo={user.company}
+          socialInfo={company}
         />
-        <UserSocial
-          socialImgAddress={UserLocationImg}
-          socialInfo={user.location}
-        />
+        <UserSocial socialImgAddress={UserLocationImg} socialInfo={location} />
         <UserSocial
           socialImgAddress={UserTwitterImg}
-          socialInfo={user.twitter_username}
+          socialInfo={twitterAddress}
         />
       </Card>
     </section>

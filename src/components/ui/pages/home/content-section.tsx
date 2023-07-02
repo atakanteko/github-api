@@ -1,16 +1,24 @@
-import { useState } from 'react';
-
 import { Grid } from 'antd';
 
 import followersImg from '../../../../assets/images/info-card-followers-img.svg';
 import followingImg from '../../../../assets/images/info-card-following-img.svg';
 import repoImg from '../../../../assets/images/info-card-repo-img.svg';
 import starImg from '../../../../assets/images/info-card-star-img.svg';
-import userModel from '../../../../model/user-model.json';
 import { AntCard } from '../../../ant/data-display/card/ant-card';
 
-function ContentSection() {
-  const [user, setUser] = useState(userModel);
+type ContentSectionType = {
+  publicRepo: number;
+  publicGists: number;
+  followers: number;
+  following: number;
+};
+
+function ContentSection({
+  publicRepo,
+  publicGists,
+  followers,
+  following,
+}: ContentSectionType) {
   const screens = Grid.useBreakpoint();
 
   return (
@@ -18,25 +26,25 @@ function ContentSection() {
       <AntCard
         avatar={repoImg}
         title="Repository"
-        description={user.public_repos}
+        description={publicRepo}
         loading={false}
       />
       <AntCard
         avatar={starImg}
         title="Gists"
-        description={user.public_gists}
+        description={publicGists}
         loading={false}
       />
       <AntCard
         avatar={followersImg}
         title="Followers"
-        description={user.followers}
+        description={followers}
         loading={false}
       />
       <AntCard
         avatar={followingImg}
         title="Following"
-        description={user.following}
+        description={following}
         loading={false}
       />
     </section>

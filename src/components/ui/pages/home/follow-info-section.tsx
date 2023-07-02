@@ -2,8 +2,11 @@ import { Card, Typography } from 'antd';
 
 import Follower from './follow-info-section/follower';
 import FollowersModel from '../../../../model/followers-model.json';
+import { useGetGithubUserFollowersQuery } from '../../../../services/user-api';
 
 function FollowerInfoSection() {
+  const { data, isLoading, isSuccess, isError, error } =
+    useGetGithubUserFollowersQuery();
   return (
     <section className="home-follower-section">
       <Card size="small" className="follower-card">
@@ -11,7 +14,7 @@ function FollowerInfoSection() {
           Followers ({FollowersModel.length})
         </Typography.Title>
         <div className="followers">
-          {FollowersModel.map((follower) => {
+          {data?.map((follower) => {
             const {
               id,
               avatar_url: avatarURL,

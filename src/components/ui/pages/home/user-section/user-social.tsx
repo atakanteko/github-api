@@ -2,7 +2,7 @@ import { Typography } from 'antd';
 
 type UserSocialType = {
   socialImgAddress: string;
-  socialInfo: string;
+  socialInfo: string | undefined;
 };
 function UserSocial({ socialImgAddress, socialInfo }: UserSocialType) {
   return (
